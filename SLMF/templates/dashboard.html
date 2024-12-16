@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Welcome, {{ username }}!</h2>
+<p>Your current role: <strong>{{ role }}</strong></p>
+
+<nav>
+    <ul>
+        <li><a href="/activity">View Activity Logs</a></li>
+        {% if role == "admin" %}
+        <li><a href="/admin">Go to Admin Panel</a></li>
+        {% endif %}
+        <li><a href="/logout">Logout</a></li>
+    </ul>
+</nav>
+{% endblock %}

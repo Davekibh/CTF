@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Search Users</h2>
+<form method="post" action="/search">
+    <label for="query">Search for a username:</label>
+    <input type="text" name="query" id="query" required>
+    <button type="submit">Search</button>
+</form>
+
+<h3>Search Results</h3>
+<ul>
+    {% for result in results %}
+    <li>ID: {{ result[0] }}, Username: {{ result[1] }}, Role: {{ result[3] }}</li>
+    {% endfor %}
+</ul>
+
+<a href="/logout">Logout</a>
+{% endblock %}
